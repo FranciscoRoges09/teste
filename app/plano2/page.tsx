@@ -1,4 +1,40 @@
-"use client"
+"use client"; // importante se quiser usar window ou Script
+
+import Script from "next/script";
+
+export default function PlanoPage() {
+  return (
+    <>
+      {/* Pixel UTMify */}
+      <Script id="utmify-pixel" strategy="afterInteractive">
+        {`
+          window.pixelId = "678c3ae557054a5cb3418c6f";
+          var a = document.createElement("script");
+          a.setAttribute("async", "");
+          a.setAttribute("defer", "");
+          a.setAttribute("src", "https://cdn.utmify.com.br/scripts/pixel/pixel.js");
+          document.head.appendChild(a);
+
+          window.addEventListener("load", function() {
+            if (typeof window.utms !== "undefined") {
+              window.utms.track("conversion", { value: 96.9, currency: "BRL" });
+            }
+          });
+        `}
+      </Script>
+
+      <Script
+        src="https://cdn.utmify.com.br/scripts/utms/latest.js"
+        data-utmify-prevent-xcod-sck
+        data-utmify-prevent-subids
+        strategy="afterInteractive"
+      />
+
+    
+    </>
+  );
+}
+
 
 import { useState, useEffect } from "react"
 import Image from "next/image"
