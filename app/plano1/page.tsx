@@ -128,7 +128,7 @@ export default function Plano1Page() {
         {transaction && !loading && !error && (
           <div className="space-y-6">
             <div className="text-center space-y-2">
-              <h1 className="text-2xl font-bold">Plano 1 - R$27,89</h1>
+              <h1 className="text-2xl font-bold">Frete Full - R$27,89</h1>
               <p className="text-muted-foreground">Escaneie o QR Code ou copie o código PIX</p>
             </div>
 
